@@ -14,15 +14,12 @@ class validator{
 	public function getErrorMessages(){
 		return $this->errorMessages;
 	}
-	//public function setValidationMap($inMap){
-		//$this->validatorMap = $inMap ;
-	//}	
+
 	public function validateForm(){
-		///echo( $this->formFields["name"] ) ;
+
 		$errorMessages = array();
 		$validForm=true;
 		foreach($this->formFields as $x => $val) {
-			//echo "$x = $val<br>\n";
 			switch ($x) {
 			case "name":
 				if( empty($val) ){
@@ -115,32 +112,6 @@ Special Request: Limited to 200 characters. Must not contain special characters.
 
 
 
-
-$testArray = array ( "name"=>" Bryan C. Litscher", "phonenumber"=>" 5152235675", "email"=>"blitscher@mchsi.com", "registrationtype"=>" presenter", "badgeholder"=>" clip ", "fridaydinner"=>" on " , "saturdaylunch"=>" on ", "sundayawardbrunch"=>" on ", "specialrequests"=>"fndn ", "submit"=>" Submit" );
-//$testArray = array ( "name"=>" Bryan C. Litscher", "phonenumber"=>" \"5152235675", "email"=>"blitscher@mchsi.com", "registrationtype"=>" presenter",   "saturdaylunch"=>" on ", "sundayawardbrunch"=>" on ", "specialrequests"=>"fndn ", "submit"=>" Submit" );
-
-$elementGroups = array(
-	"badgeholder"=> array("badgeholder"),
-	"Provided Meals" => array("fridaydinner","saturdaylunch","sundayawardbrunch")
-	);
-
-//trim whitespace from sides of values
-foreach($testArray as $x=>$y){
-	$testArray[$x] =trim($y);
-	}
-
-$validationMap = [];
-$validationMap["name"] = "notBlank";
-
-
-$a = new validator($testArray);
-$a->setElementGroups($elementGroups);
-//$a->setValidationMap($validationMap);
-if ( $a->validateForm() ){ 
-	echo "im ok";
-}else{
-	print_r( $a->getErrorMessages() );
-}
 
 */
 
